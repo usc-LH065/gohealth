@@ -1,0 +1,7 @@
+{
+  "name": "gohealth",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

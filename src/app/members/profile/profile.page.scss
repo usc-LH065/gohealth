@@ -1,0 +1,11 @@
+form p {
+    padding: 0;
+    color: red;
+    font-size: 0.9rem;
+    font-family: cursive;
+    display: flex;
+    flex-flow: column;
+    flex: 1 1 auto;
+    overflow-y: auto;
+    align-items: center;
+}

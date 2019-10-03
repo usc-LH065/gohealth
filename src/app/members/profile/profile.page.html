@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-toolbar color="tertiary">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Profile</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+<ion-content class="ion-padding ion-text-center">
+  <ion-list lines="none">
+    <form (submit)="submitProfile(profileForm.value)" [formGroup]="profileForm" novalidate>
+      <ion-radio-group formControlName="gender">
+        <ion-list-header>
+          <ion-label>Gender*</ion-label>
+        </ion-list-header>
+        <ion-item lines="none">
+          <ion-label>Male</ion-label>
+          <ion-radio slot="start" value="m"></ion-radio>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label>Female</ion-label>
+          <ion-radio slot="start" value="f"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+      <ion-item>
+        <ion-label position="stacked">Age(Year)*</ion-label>
+        <ion-input type="number" placeholder="Ex: 33" formControlName="age"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Height(cm)*</ion-label>
+        <ion-input type="number" placeholder="Ex: 170" formControlName="height"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Weight(kg)*</ion-label>
+        <ion-input type="number" placeholder="Ex: 70" formControlName="weight"></ion-input>
+      </ion-item>  
+      <p>{{alertMessage}}</p>
+      <ion-button *ngIf="!isEmptyProfile" fill="clear" color="danger" (click)="skip()">Skip</ion-button>
+      <ion-button shape="round" color="tertiary" expand="full" type="submit">Submit</ion-button>
+    </form>
+  </ion-list>
+</ion-content>

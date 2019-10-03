@@ -1,0 +1,18 @@
+<ion-content class="ion-padding ion-margin-vertical">
+  <p>Welcome to Go Health</p>
+  <form (submit)="login(loginForm.value)" [formGroup]="loginForm" novalidate>
+      <ion-item lines="none">
+        <ion-label position="floating">E-mail</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>  
+      <ion-button shape="round" color="tertiary" expand="full" type="submit">Sign In</ion-button>
+      <p>{{alertMessage}}</p>
+      <div>
+          Don't have an account?&nbsp;&nbsp;<a routerLink="/register">SignUp Here</a>
+      </div>
+  </form>
+</ion-content>

@@ -1,0 +1,21 @@
+p {
+    font-size: 1.5rem;
+    color: var(--ion-color-tertiary);;
+    font-weight: bold;
+    font-family: cursive;
+    padding-bottom: 10vh;
+    padding-top: 10vh;      
+    text-align: center;
+}
+form p {
+    height: 36px;
+    padding: 0;
+    color: red;
+    font-size: 0.9rem;   
+}
+.success {
+    color: green!important;
+}
+div {
+    text-align: center;
+}
