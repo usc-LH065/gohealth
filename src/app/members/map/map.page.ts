@@ -92,8 +92,9 @@ export class MapPage implements OnInit {
       let dis = google.maps.geometry.spherical.computeDistanceBetween(latlng_p, latlng_c);
       allDistance += dis;      
     }
+    allDistance = Math.round(allDistance);
     localStorage.setItem('distance', allDistance.toString());
-    localStorage.setItem('time', tracking_time.toString())
+    localStorage.setItem('time', tracking_time.toString());
 
     this.router.navigate(['/members/results']);
   }

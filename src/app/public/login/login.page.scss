@@ -2,7 +2,7 @@ p {
     font-size: 1.5rem;
     color: var(--ion-color-tertiary);;
     font-weight: bold;
-    font-family: cursive;
+    font-family: 'Courier New', Courier, monospace;
     padding-bottom: 10vh;
     padding-top: 10vh;      
     text-align: center;
@@ -17,4 +17,12 @@ form p {
 
 div {
     text-align: center;
+}
+
+.fix {
+    position: fixed;
+    bottom: 0px;
+    width: 100vw;
+    height: 15vh;
+
 }

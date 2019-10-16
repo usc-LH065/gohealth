@@ -14,6 +14,7 @@ export class AuthenticationService {
   }
   
   loginUser(value): Promise<any>{
+    
     return this.afAuth.auth.signInWithEmailAndPassword(value.email, value.password);
   }
 

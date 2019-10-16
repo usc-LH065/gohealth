@@ -14,6 +14,7 @@ import { environment } from '../environments/environment';
 import { AuthenticationService } from './services/authentication.service';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,6 +29,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     SplashScreen,
     AuthenticationService,
     Geolocation,
+    InAppBrowser,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

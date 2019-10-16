@@ -20,12 +20,18 @@ export class ProfilePage implements OnInit {
     private menuCtrl: MenuController) { }
 
   ngOnInit() {
+  
     this.profileForm = this.fb.group({
       gender: ['', [Validators.required]],
       age: ['', [Validators.required]],
       height: ['', [Validators.required]],
       weight: ['', [Validators.required]]
     });   
+  }
+
+  ionViewWillEnter() {
+    this.alertMessage = "";
+    this.menuCtrl.enable(true);
     this.apiService.getProfile().subscribe((profile: any) => {
       console.log(profile);
       if(!profile) this.isEmptyProfile = true;
@@ -37,11 +43,6 @@ export class ProfilePage implements OnInit {
         this.profileForm.controls['weight'].setValue(profile.weight);
       }
     })
-  }
-
-  ionViewWillEnter() {
-    this.alertMessage = "";
-    this.menuCtrl.enable(true);
   }
 
   submitProfile(value) {

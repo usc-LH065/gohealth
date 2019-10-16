@@ -21,16 +21,17 @@
       <ion-col>
         <p class="ion-text-center">DISTANCE</p>
         <ion-text class="ion-text-center" color="danger">
-          <h2 *ngIf="km>0">{{km}}km {{mm}}m</h2>
-          <h2 *ngIf="km==0">{{mm}}m</h2>
+          <h2 *ngIf="km>0">{{km}}km {{m}}m</h2>
+          <h2 *ngIf="km==0">{{m}}m</h2>
         </ion-text>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
           <p class="ion-text-center">CALORIES</p>
-          <ion-text class="ion-text-center" color="primary"><div style="font-size: 4rem;">{{calories}}</div></ion-text>
+          <ion-text class="ion-text-center" color="primary"><div style="font-size: 3rem;">{{calories}}kcal</div></ion-text>
       </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>
+

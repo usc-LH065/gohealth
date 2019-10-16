@@ -9,10 +9,12 @@
         <ion-label position="floating">Password</ion-label>
         <ion-input type="password" formControlName="password"></ion-input>
       </ion-item>  
-      <ion-button shape="round" color="tertiary" expand="full" type="submit">Sign In</ion-button>
+      <ion-button shape="round" color="tertiary" expand="full" type="submit"><ion-ripple-effect></ion-ripple-effect>Sign In</ion-button>
       <p>{{alertMessage}}</p>
       <div>
           Don't have an account?&nbsp;&nbsp;<a routerLink="/register">SignUp Here</a>
       </div>
   </form>
 </ion-content>
+
+<img src="assets/footer.png" alt="Footer Image" class="fix">

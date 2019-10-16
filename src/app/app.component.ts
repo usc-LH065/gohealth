@@ -64,6 +64,7 @@ export class AppComponent implements OnInit{
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      console.log("test");
       if(this.authService.isAuthenticated){
         this.router.navigateByUrl('/members/profile')
       } else {

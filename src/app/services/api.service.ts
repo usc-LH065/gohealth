@@ -1,39 +1,44 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import * as firebase from 'firebase/app';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ApiService {
+export class ApiService{
 
-  currentUser: any;
-  constructor(private firestore: AngularFirestore) {
-    this.currentUser = firebase.auth().currentUser;
+  currentUserId: any;
+  constructor(private firestore: AngularFirestore){
 
+  }
+
+  setUserId(userId) {
+    this.currentUserId = userId;
   }
 
   createProfile(profile) {
-    return this.firestore.collection('profiles').doc(this.currentUser.uid).set(profile);
+    console.log(this.currentUserId);
+    return this.firestore.collection('profiles').doc(this.currentUserId).set(profile);
   }
 
   updateProfile(profile) {
-    return this.firestore.collection('profiles').doc(this.currentUser.uid).update(profile);
+    return this.firestore.collection('profiles').doc(this.currentUserId).update(profile);
   }
 
   getProfile() {
-    return this.firestore.collection('profiles').doc(this.currentUser.uid).valueChanges();
+    console.log(this.currentUserId);
+    return this.firestore.collection('profiles').doc(this.currentUserId).valueChanges();
   }
 
   createQuests(quests) {
-    return this.firestore.collection('quests').doc(this.currentUser.uid).set(quests);
+    return this.firestore.collection('quests').doc(this.currentUserId).set(quests);
   }
 
   updateQuests(quests) {
-    return this.firestore.collection('quests').doc(this.currentUser.uid).update(quests);
+    return this.firestore.collection('quests').doc(this.currentUserId).update(quests);
   }
 
   getQuests() {
-    return this.firestore.collection('quests').doc(this.currentUser.uid).valueChanges();
+    return this.firestore.collection('quests').doc(this.currentUserId).valueChanges();
   }
 }

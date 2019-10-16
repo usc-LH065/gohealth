@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { LoadingController, MenuController } from '@ionic/angular';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,8 @@ export class LoginPage implements OnInit {
     private router: Router, 
     private authService: AuthenticationService,
     public loadingCtrl: LoadingController,
-    private menuCtrl: MenuController
+    private menuCtrl: MenuController,
+    private apiService: ApiService
     ) { }
 
   ngOnInit() {
@@ -55,6 +57,7 @@ export class LoginPage implements OnInit {
 
     this.authService.loginUser(value)
     .then(async(res) => {
+      this.apiService.setUserId(res.user.uid);
       await loading.dismiss();
       console.log(res);
       this.router.navigate(['/members/profile'])

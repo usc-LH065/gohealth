@@ -1,47 +1,16 @@
 <ion-header>
-  <ion-toolbar color="tertiary">
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>Questionnaire</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content class="ion-padding  ion-text-center">
-  <form [formGroup]="qsForm">
-    <ion-list>
-      <div formArrayName="quests">
-        <div *ngFor="let qs of qsForm.get('quests')['controls']; let i=index" [formGroupName]="i">
-          <ion-radio-group formControlName="choice">
-            <ion-list-header>
-              <ion-label>{{qs.controls.nbr.value}}. {{qs.controls.question.value}}</ion-label>
-            </ion-list-header>
-            <ion-item lines="none">
-              <ion-label>{{qs.controls.choice1.value}}</ion-label>
-              <ion-radio slot="start" [value]="qs.controls.choice1.value"></ion-radio>
-            </ion-item>
-            <ion-item lines="none">
-              <ion-label>{{qs.controls.choice2.value}}</ion-label>
-              <ion-radio slot="start" [value]="qs.controls.choice2.value"></ion-radio>
-            </ion-item>
-            <ion-item lines="none">
-              <ion-label>{{qs.controls.choice3.value}}</ion-label>
-              <ion-radio slot="start" [value]="qs.controls.choice3.value"></ion-radio>
-            </ion-item>
-            <ion-item lines="none">
-              <ion-label>{{qs.controls.choice4.value}}</ion-label>
-              <ion-radio slot="start" [value]="qs.controls.choice4.value"></ion-radio>
-            </ion-item>
-            <ion-item lines="none">
-              <ion-label>{{qs.controls.choice5.value}}</ion-label>
-              <ion-radio slot="start" [value]="qs.controls.choice5.value"></ion-radio>
-            </ion-item>
-          </ion-radio-group>
-        </div>
-      </div>
-      <p>{{alertMessage}}</p>
-      <ion-button *ngIf="isQuestsExist" fill="clear" color="danger" (click)="skip()">Skip</ion-button>
-      <ion-button shape="round"  color="tertiary" expand="full"  (click)="onSubmit()">Submit</ion-button>
-    </ion-list>
-  </form>
+    <ion-toolbar color="tertiary">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Questionnairs</ion-title>
+      <ion-buttons  slot="primary">
+        <ion-button clear (click)="gotoMap()">
+            <ion-icon name="locate"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+<ion-content>
+    <iframe src="https://www.surveymonkey.com/r/VCKD3GM" style="width: 100%; height: calc(100vh - 56px);"></iframe>
 </ion-content>
