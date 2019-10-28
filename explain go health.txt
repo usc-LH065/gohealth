@@ -1,0 +1,9 @@
+Expaian get files go health
+get download files in Github 
+
+https://github.com/usc-LH065/gohealth
+
+1. Go to the gohealth folder.
+2. Please open command windows.
+3. run "Ionic cordova build android". It will generate the apk on C:\Users\Downloads\gohealth\platforms\android\app\build\outputs\apk\debug
+4. you can copy app-debug.apk and paste to your device and run it.
